@@ -6,7 +6,7 @@
      * Twenty Minute Rule Web App
      * @author Ricardo Carneiro <me@ricardocarneiro.pt>
      */
-    var app = angular.module('twentyMinuteRuleApp', ['ngRoute', 'timer']);
+    var app = angular.module('twentyMinuteRuleApp', ['ngRoute', 'timer', 'ui.bootstrap']);
 
     /**
      * Configure the Routes
@@ -16,7 +16,6 @@
             // Home
             .when("/", { templateUrl: "partials/home.html", controller: "HomeController" })
             // Pages
-            // .when("/about", { templateUrl: "partials/about.html", controller: "HomeController" })
             .otherwise("/", { templateUrl: "partials/home.html", controller: "HomeController" });
     }]);
 
@@ -30,7 +29,7 @@
     /**
      * Controls all other Pages
      */
-    app.controller('HomeController', function ($scope, CONSTANTS) {
+    app.controller('HomeController', function ($scope, CONSTANTS, $uibModal) {
 
         $scope.areNotificationSupported = true;
         $scope.areNotificationEnabled = false;
@@ -74,6 +73,18 @@
                 restart();
             };
 
+            // showModal();
+
+        };
+
+        var showModal = function () {
+
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/modal.html',
+                controller: 'ModalController',
+                windowTemplateUrl: 'partials/window.html'
+            });
+
         };
 
         var restart = function () {
@@ -96,6 +107,16 @@
             }
         };
 
+    });
+
+    app.controller('ModalController', function ($scope, $uibModalInstance) {
+        $scope.ok = function () {
+            alert('ok');
+        };
+
+        $scope.cancel = function () {
+            alert('cancel');
+        };
     });
 
 })();
