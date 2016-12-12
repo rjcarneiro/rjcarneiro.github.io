@@ -1,1 +1,1 @@
-# twentyminuterule.github.io
+# Twenty Minute Rule
