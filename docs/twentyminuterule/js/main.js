@@ -36,6 +36,7 @@
         $scope.lastNotification = null;
         $scope.countdown = 20 * 60;
 
+
         var clock = null;
 
         var isEnabled = function (permission) {
@@ -74,6 +75,13 @@
             };
 
             // showModal();
+
+            setTimeout(function () {
+                if (notification) {
+                    notification.close();
+                }
+                restart();
+            }, 20 * 1000);
 
         };
 
