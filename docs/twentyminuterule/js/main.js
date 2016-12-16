@@ -31,6 +31,8 @@
      */
     app.controller('HomeController', function ($scope, CONSTANTS, $uibModal) {
 
+        var audio = null;
+
         $scope.areNotificationSupported = true;
         $scope.areNotificationEnabled = false;
         $scope.lastNotification = null;
@@ -50,6 +52,19 @@
             showNotification();
         };
 
+        var playSound = function () {
+            if (audio) {
+                audio.load();
+                audio.play();
+            }
+        };
+
+        var stopSound = function () {
+            if (audio) {
+                audio.pause();
+            }
+        };
+
         var showNotification = function () {
             var now = new Date();
             $scope.lastNotification = now;
@@ -66,6 +81,7 @@
             };
 
             var notification = new Notification("Rest your eyes for 20 seconds...", options);
+            playSound();
 
             var automaticTimeout = setTimeout(function () {
                 if (notification) {
@@ -100,11 +116,14 @@
         };
 
         var restart = function () {
+            stopSound();
             $scope.$broadcast('timer-reset');
             $scope.$broadcast('timer-start');
         };
 
         $scope.init = function () {
+
+            audio = new Audio("audio/harp.mp3");
 
             if (!("Notification" in window)) {
                 $scope.areNotificationSupported = false;
