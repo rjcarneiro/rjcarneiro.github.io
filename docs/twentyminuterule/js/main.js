@@ -36,7 +36,6 @@
         $scope.lastNotification = null;
         $scope.countdown = 20 * 60;
 
-
         var clock = null;
 
         var isEnabled = function (permission) {
@@ -68,20 +67,25 @@
 
             var notification = new Notification("Rest your eyes for 20 seconds...", options);
 
-            notification.onclick = function (event) {
-                event.preventDefault();
-                notification.close();
-                restart();
-            };
-
-            // showModal();
-
-            setTimeout(function () {
+            var automaticTimeout = setTimeout(function () {
                 if (notification) {
                     notification.close();
                 }
                 restart();
             }, 20 * 1000);
+
+            notification.onclick = function (event) {
+                event.preventDefault();
+
+                if (automaticTimeout) {
+                    clearTimeout(automaticTimeout);
+                }
+
+                notification.close();
+                restart();
+            };
+
+            // showModal();
 
         };
 
