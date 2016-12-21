@@ -135,4 +135,9 @@ footer {
     #loaderContainer{
         width: 40%;
     }
+
+    .navbar-brand{
+        text-align: center;
+        width: 100%;
+    }
 }
