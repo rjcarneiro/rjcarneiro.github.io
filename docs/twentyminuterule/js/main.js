@@ -32,6 +32,8 @@
     app.controller('HomeController', function ($scope, CONSTANTS, $uibModal) {
 
         var audio = null;
+        var modalInstance = null;
+        var circle = null;
 
         $scope.areNotificationSupported = true;
         $scope.areNotificationEnabled = false;
@@ -81,12 +83,18 @@
             };
 
             var notification = new Notification("Rest your eyes for 20 seconds...", options);
+
             playSound();
 
             var automaticTimeout = setTimeout(function () {
                 if (notification) {
                     notification.close();
                 }
+
+                if (modalInstance) {
+                    modalInstance.close();
+                }
+
                 restart();
             }, 20 * 1000);
 
@@ -101,25 +109,36 @@
                 restart();
             };
 
-            // showModal();
+            showModal();
 
         };
 
         var showModal = function () {
 
-            var modalInstance = $uibModal.open({
+            modalInstance = $uibModal.open({
                 templateUrl: 'partials/modal.html',
-                controller: 'ModalController',
-                windowTemplateUrl: 'partials/window.html'
+                windowTemplateUrl: 'partials/window.html',
+                keyboard: false,
+                scope: $scope
             });
 
         };
 
         var restart = function () {
             stopSound();
+            if (circle) {
+                circle.stop();
+                circle.set(0);
+            }
             $scope.$broadcast('timer-reset');
             $scope.$broadcast('timer-start');
         };
+
+        $scope.$on('timer-tick', function (event, args) {
+            if (circle) {
+                circle.animate(1 - args.millis / ($scope.countdown * 1000));
+            }
+        });
 
         $scope.init = function () {
 
@@ -136,18 +155,40 @@
                     });
                 }
             }
+
+            circle = new ProgressBar.SemiCircle('#loaderContainer', {
+                strokeWidth: 6,
+                color: '#FFEA82',
+                trailColor: '#eee',
+                trailWidth: 1,
+                easing: 'easeInOut',
+                duration: 1400,
+                svgStyle: null,
+                text: {
+                    value: '',
+                    alignToBottom: false
+                },
+                from: { color: '#FFEA82' },
+                to: { color: '#ED6A5A' },
+                // Set default step function for all animate calls
+                step: (state, bar) => {
+                    bar.path.setAttribute('stroke', state.color);
+                    var value = Math.round(bar.value() * 100);
+                    if (value === 0) {
+                        bar.setText('');
+                    } else {
+                        bar.setText(value + '%');
+                    }
+
+                    bar.text.style.color = state.color;
+                }
+            });
+
+            circle.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+            circle.text.style.fontSize = '2rem';
+
         };
 
-    });
-
-    app.controller('ModalController', function ($scope, $uibModalInstance) {
-        $scope.ok = function () {
-            alert('ok');
-        };
-
-        $scope.cancel = function () {
-            alert('cancel');
-        };
     });
 
 })();

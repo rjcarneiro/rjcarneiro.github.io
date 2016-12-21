@@ -1,60 +1,50 @@
 <div ng-init="init()">
-    <!-- Ads -->
+
+    <!-- Timer -->
     <div class="section">
+
         <div class="container">
-            <!-- Twenty Minute Rule -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5358621924523041" data-ad-slot="5734217870" data-ad-format="auto"></ins>
-</div>
-</div>
 
-<!-- Timer -->
-<div class="section">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 col-sm-12 text-center well">
-                <h1>
-                    <timer countdown="countdown" finish-callback="finished()" max-time-unit="'minute'" interval="1000">{{mminutes}}:{{sseconds}}</timer>
-                </h1>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center well">
+                    <div id="loaderContainer"></div>
+                    <h1>
+                        <timer countdown="countdown" finish-callback="finished()" max-time-unit="'minute'" interval="1000">{{mminutes}}:{{sseconds}}</timer>
+                    </h1>
+                </div>
             </div>
+            <!-- /.row -->
+
         </div>
-        <!-- /.row -->
+        <!-- /.container -->
 
     </div>
-    <!-- /.container -->
 
-</div>
+    <!-- Explanation -->
+    <div class="section">
 
-<div class="section">
+        <div class="container">
 
-    <div class="container">
+            <div class="row">
 
-        <div class="row">
-
-            <div class="col-lg-4 col-md-4 text-center">
-                <img src="img/notifications.png" alt="Generic placeholder image" />
-                <h2>Turn on Notifications</h2>
-                <p>Allow you to be notified when you spend 20 minutes.</p>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center">
-                <img src="img/start.png" alt="Generic placeholder image" />
-                <h2>Start 20 minutes timer</h2>
-                <p>A timer will start countdown from 20 minutes.</p>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center">
-                <img src="img/clock.png" alt="Generic placeholder image" />
-                <h2>Rest your eyes</h2>
-                <p>When 20 minutes passes, you'll be notified and just relax your eyes.</p>
+                <div class="col-lg-4 col-md-4 text-center">
+                    <img src="img/notifications.png" alt="Generic placeholder image" />
+                    <h2>Turn on Notifications</h2>
+                    <p>Allow you to be notified when you spend 20 minutes.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 text-center">
+                    <img src="img/start.png" alt="Generic placeholder image" />
+                    <h2>Start 20 minutes timer</h2>
+                    <p>A timer will start countdown from 20 minutes.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 text-center">
+                    <img src="img/clock.png" alt="Generic placeholder image" />
+                    <h2>Rest your eyes</h2>
+                    <p>When 20 minutes passes, you'll be notified and just relax your eyes.</p>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>
-
-</div>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
