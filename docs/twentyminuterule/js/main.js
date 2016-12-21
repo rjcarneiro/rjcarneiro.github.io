@@ -23,7 +23,8 @@
     * Constants
     */
     app.constant("CONSTANTS", {
-        "TAG": "twentyMinuteRuleNotificationTag"
+        "TAG": "twentyMinuteRuleNotificationTag",
+        "COUNTDOWN": 1200
     });
 
     /**
@@ -34,11 +35,13 @@
         var audio = null;
         var modalInstance = null;
         var circle = null;
+        var notification = null;
 
         $scope.areNotificationSupported = true;
         $scope.areNotificationEnabled = false;
         $scope.lastNotification = null;
-        $scope.countdown = 20 * 60;
+        // $scope.countdown = CONSTANTS.COUNTDOWN;
+        $scope.countdown = 10;
 
         var clock = null;
 
@@ -82,19 +85,11 @@
                 vibrate: [200, 100, 200],
             };
 
-            var notification = new Notification("Rest your eyes for 20 seconds...", options);
+            notification = new Notification("Rest your eyes for 20 seconds...", options);
 
             playSound();
 
             var automaticTimeout = setTimeout(function () {
-                if (notification) {
-                    notification.close();
-                }
-
-                if (modalInstance) {
-                    modalInstance.close();
-                }
-
                 restart();
             }, 20 * 1000);
 
@@ -114,21 +109,33 @@
         };
 
         var showModal = function () {
-
             modalInstance = $uibModal.open({
                 templateUrl: 'partials/modal.html',
                 windowTemplateUrl: 'partials/window.html',
                 keyboard: false,
                 scope: $scope
             });
-
         };
 
         var restart = function () {
+
+            if (notification) {
+                notification.close();
+            }
+
+            if (modalInstance) {
+                modalInstance.close();
+            }
+
             stopSound();
+
             if (circle) {
                 circle.stop();
                 circle.set(0);
+            }
+
+            if (modalInstance) {
+
             }
             $scope.$broadcast('timer-reset');
             $scope.$broadcast('timer-start');
