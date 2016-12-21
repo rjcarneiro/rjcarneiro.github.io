@@ -40,8 +40,7 @@
         $scope.areNotificationSupported = true;
         $scope.areNotificationEnabled = false;
         $scope.lastNotification = null;
-        // $scope.countdown = CONSTANTS.COUNTDOWN;
-        $scope.countdown = 10;
+        $scope.countdown = CONSTANTS.COUNTDOWN;
 
         var clock = null;
 
