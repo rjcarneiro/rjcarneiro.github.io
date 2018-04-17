@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="pay-with-ease" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="69.3px" height="111px" viewBox="0 0 69.3 111" enable-background="new 0 0 69.3 111" xml:space="preserve">
+<path id="outline" fill="#FFFFFF" d="M62,0H7.3C3.3,0,0,3.2,0,7.2v96.7c0,3.9,3.3,7.2,7.3,7.2H62c4,0,7.3-3.2,7.3-7.2V7.2
+	C69.3,3.2,66,0,62,0z"/>
+<g id="device">
+	<g>
+		<path fill="#FFFFFF" d="M36,95.1c-1.9,0-3.5,1.6-3.5,3.5s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S37.9,95.1,36,95.1z M4.8,102.1V8.9
+			c0-2.3,1.8-4.1,4.1-4.1h51.5c2.3,0,4.1,1.8,4.1,4.1v93.2c0,2.3-1.8,4.1-4.1,4.1H8.9C6.6,106.2,4.8,104.4,4.8,102.1z M8.6,7.5
+			c-0.8,0-1.4,0.6-1.4,1.4v82c0,0.8,0.6,1.4,1.4,1.4h52.1c0.8,0,1.4-0.6,1.4-1.4v-82c0-0.8-0.6-1.4-1.4-1.4
+			C60.7,7.5,8.6,7.5,8.6,7.5z"/>
+		<circle fill="#00728C" cx="36" cy="98.6" r="3.5"/>
+		<path fill="#00728C" d="M10,89.5h49.3V10.3H10V89.5z M60.7,92.3H8.6c-0.8,0-1.4-0.6-1.4-1.4v-82c0-0.8,0.6-1.4,1.4-1.4h52.1
+			c0.8,0,1.4,0.6,1.4,1.4v82C62.1,91.7,61.5,92.3,60.7,92.3z"/>
+		<path fill="#00728C" d="M2,8.9C2,5.1,5.1,2,8.9,2h51.5c3.8,0,6.9,3.1,6.9,6.9v93.2c0,3.8-3.1,6.9-6.9,6.9H8.9
+			c-3.8,0-6.9-3.1-6.9-6.9C2,102.1,2,8.9,2,8.9z M8.9,106.2h51.5c2.3,0,4.1-1.8,4.1-4.1V8.9c0-2.3-1.8-4.1-4.1-4.1H8.9
+			c-2.3,0-4.1,1.8-4.1,4.1v93.2C4.8,104.4,6.6,106.2,8.9,106.2z"/>
+	</g>
+</g>
+<polyline id="checkmark_2_" fill="none" stroke="#00B5AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	28.2,77.5 33.9,83.4 45.2,72.3 "/>
+<path id="line2" fill="#00B5AF" d="M51.2,63h-33c-0.3,0-0.5,0.2-0.5,0.5s0.2,0.5,0.5,0.5h33c0.3,0,0.5-0.2,0.5-0.5S51.4,63,51.2,63z
+	"/>
+<polyline id="checkmark_1_" fill="none" stroke="#00B5AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	28.2,48.5 33.9,54.4 45.2,43.3 "/>
+<path id="line1" fill="#00B5AF" d="M18.2,35h33c0.3,0,0.5-0.2,0.5-0.5S51.4,34,51.2,34h-33c-0.3,0-0.5,0.2-0.5,0.5S17.9,35,18.2,35z
+	"/>
+<polyline id="checkmark" fill="none" stroke="#00B5AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	28.2,19.8 33.9,25.7 45.2,14.6 "/>
+</svg>
